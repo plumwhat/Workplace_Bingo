@@ -38,9 +38,18 @@ function toggleCell(event) {
 function checkBingo() {
     if (selectedCells.every(cell => cell)) {
         bingoDiv.classList.remove('hidden');
+        recordBingoTime();
     } else {
         bingoDiv.classList.add('hidden');
     }
+}
+
+function recordBingoTime() {
+    const now = new Date();
+    const time = now.toLocaleString();
+    let bingoTimes = JSON.parse(localStorage.getItem('bingoTimes')) || [];
+    bingoTimes.push(time);
+    localStorage.setItem('bingoTimes', JSON.stringify(bingoTimes));
 }
 
 function resetGame() {
