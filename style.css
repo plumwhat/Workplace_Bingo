@@ -90,3 +90,20 @@ h1 {
 .hidden {
     display: none;
 }
+
+#bingo-times-button {
+    padding: 12px 24px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+#bingo-times-button:hover {
+    background-color: #2980b9;
+}
