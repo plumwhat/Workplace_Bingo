@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo Times</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+        }
+        ul{
+            list-style-type: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bingo Times</h1>
+        <ul id="bingo-times-list"></ul>
+        <a href="index.html">Back to Game</a>
+    </div>
+    <script>
+        const bingoTimesList = document.getElementById('bingo-times-list');
+        const bingoTimes = JSON.parse(localStorage.getItem('bingoTimes')) || [];
+
+        bingoTimes.forEach(time => {
+            const li = document.createElement('li');
+            li.textContent = time;
+            bingoTimesList.appendChild(li);
+        });
+    </script>
+</body>
+</html>
