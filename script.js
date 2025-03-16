@@ -5,6 +5,7 @@ const words = [
 const grid = document.querySelector('.grid');
 const resetButton = document.getElementById('reset-button');
 const bingoDiv = document.getElementById('bingo');
+const bingoTimesButton = document.getElementById('bingo-times-button');
 let selectedWords = [];
 let selectedCells = [];
 
@@ -57,4 +58,9 @@ function resetGame() {
 }
 
 resetButton.addEventListener('click', resetGame);
+
+bingoTimesButton.addEventListener('click', () => {
+    window.location.href = 'bingo_times.html';
+});
+
 createGrid();
